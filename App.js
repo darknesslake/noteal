@@ -1,8 +1,17 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Button, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+function ButtonLeftUp() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Button titile='Hey there!' />
+    </View>
+  )
+}
+
 
 function Feed() {
   return (
@@ -26,7 +35,7 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Feed"
+      initialRouteName="FeedScreen"
       screenOptions={{
         tabBarActiveTintColor: '#e91e63',
       }}
@@ -42,7 +51,7 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Profile"
+        name="ProfileScreen"
         component={Profile}
         options={{
           tabBarLabel: 'Profile',

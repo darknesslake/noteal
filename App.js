@@ -1,82 +1,39 @@
 import 'react-native-gesture-handler';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 
 import React, { Component } from 'react';
 import { Text, View, Button, StyleSheet, Alert, TouchableOpacity, ImageBackground } from 'react-native';
 
-import HomeScreen from './src/screens/Home';
-import ProfileScreen from './src/screens/Profile';
-
-import Navigate from './navigate';
-
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+import MainScreen from './src/components/Main';
+import AddGameScreen from './src/screens/AddGameScreen'
+
+import TwentyFour from './src/components/Card/TwentyFour'
+import ThirtySix from './src/components/Card/ThirtySix'
+import FiftyTwo from './src/components/Card/FiftyTwo'
 // const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator()
 
 
 
-
-class MyTabs extends Component {
+export default class App extends Component {
   render() {
-    return(
-      
-      <Tab.Navigator
-        initialRouteName="Home"
-        screenOptions={{
-        tabBarActiveTintColor: '#e91e63',
-      }}
-      >
+    return (
 
-      <Tab.Screen
-        name="Home"
-        component={HomeScreen}  
-        options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
-          ),
-        }}  
-        />
-      
-      <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{
-          tabBarLabel: 'Profile',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
-          ),
-        }}
-        />
-
-    </Tab.Navigator>
-    
-    );
-    
-  }
-  
-}
-
-
-export default function App({ navigation }) {
-  const herewr = () => Alert.prompt("Here: ")
-  const handleButtonPress = () => Alert.alert('Hi')
-  const handleButtonPress2 = () => Alert.alert('Hi', 'Main', [
-    {text: 'Да', onPress: () => console.log('Yes by')},
-    {text: 'Отмена', onPress: () => console.log('No by')}
-  ]);
-  const handleButtonPress3 = () =>  Alert.alert(herewr)
-  
-  return (
-      
       <NavigationContainer>
-                
-        <MyTabs />
-      
+
+        <Stack.Navigator>
+            <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false, animationEnabled: false, gestureEnabled: false }} />
+            <Stack.Screen name='New Game' component={AddGameScreen} />
+            <Stack.Screen name='Twenty Four' component={TwentyFour} />
+            <Stack.Screen name='Thirty Six' component={ThirtySix} />
+            <Stack.Screen name='Fifty Two' component={FiftyTwo} />
+        </Stack.Navigator>
+
       </NavigationContainer>
-    );
+    )
+  }
 }

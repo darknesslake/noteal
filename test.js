@@ -1,11 +1,23 @@
+<RootStack.Screen name="New Game" component={AddGameScreen}
+                  options={{
+                            tabBarLabel: 'New',
+                            tabBarIcon: ({ color, size }) => (
+                            <MaterialCommunityIcons name="plus-box" color={color} size={size} />
+                          ),
+}}
+/>
 
-      <Tab.Screen
-      name="AddScreen"
-      component={AddScreen}
-      options={{
-        tabBarLabel: 'AddScreen',
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="account" color={color} size={size} />
-        ),
-      }}
-      />
+
+
+/*
+  return (
+  <View>
+    <RadioGroup
+      radioButtons={radioButtonsData} //pass in our array
+      onPress={(value) => setValue(value)}
+    />
+    <Text>{radioButtons}</Text>
+  </View>
+);
+}
+*/

@@ -16,7 +16,7 @@ import ThirtySix from './src/components/Card/ThirtySix'
 import FiftyTwo from './src/components/Card/FiftyTwo'
 // const Stack = createNativeStackNavigator();
 const Stack = createStackNavigator()
-
+//
 
 
 export default class App extends Component {

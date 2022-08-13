@@ -21,3 +21,27 @@
 );
 }
 */
+Alert.alert('Take another and try again.')
+
+radioButtons
+
+<RadioGroup
+    radioButtons={radioButtonsData}
+    initial={0}
+    onPress={(value) => setValue(value)}
+    layout='row'
+    // labelStyle
+/>
+
+
+
+const [chosenOption, setChosenOption] = useState(radioButtons);
+
+<RadioForm
+radio_props={radioButtonsData2}
+initial={1} //initial value of this group
+formHorizontal={true}
+onPress={(value) => {
+  setChosenOption(value);
+}}
+/>

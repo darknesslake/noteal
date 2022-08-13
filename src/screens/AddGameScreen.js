@@ -2,6 +2,8 @@ import React, { Component, useState } from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native'; // importing components
 
 import RadioGroup from 'react-native-radio-buttons-group';
+import RadioForm from 'react-native-simple-radio-button';
+
 
 const radioButtonsData = [
   {id: 0, label: '24', value: '24' },
@@ -9,6 +11,11 @@ const radioButtonsData = [
   {id: 2, label: '52', value: '52' },
 ];
 
+const radioButtonsData2 = [
+  { label: '24  ', value: '24' },
+  { label: '36  ', value: '36' },
+  { label: '52  ', value: '52' },
+];
 
 /*
 const selectAmountCard = (a,b) => {
@@ -24,10 +31,13 @@ const selectAmountCard = (a,b) => {
               }
 }
 */
-
+AddGameScreen
 // The home screen contains the text “You are on the home page” and a button.
 export default function AddGameScreen({navigation}) {
+
   const [radioButtons, setRadioButtons] = useState(radioButtons)
+  const [chosenOption, setChosenOption] = useState(radioButtons);
+
 
 // new
   const setValue = (value) => {
@@ -44,25 +54,30 @@ export default function AddGameScreen({navigation}) {
 
 
   function selectAmountCard(Navigation) {
-    if (radioButtons == radioButtonsData[0].value) {
+    if (chosenOption == radioButtonsData2[0].value) {
         navigation.navigate("Twenty Four")
-    } else if (radioButtons == radioButtonsData[1].value) {
+    } else if (chosenOption == radioButtonsData2[1].value) {
         navigation.navigate("Thirty Six")
-    } else if (radioButtons == radioButtonsData[2].value) {
+    } else if (chosenOption == radioButtonsData2[2].value) {
         navigation.navigate("Fifty Two")
-    } else { Alert.alert('Take another and try again.') }
+    } else { navigation.navigate("Thirty Six") }
   }
 
 
     return (
         <View style={styles.container}>
         <View style={styles.box1}>
-        <RadioGroup
-            radioButtons={radioButtonsData}
-            onPress={(value) => setValue(value)}
-            layout='row'
-            // labelStyle
+
+
+        <RadioForm
+        radio_props={radioButtonsData2}
+        initial={1} //initial value of this group
+        formHorizontal={true}
+        onPress={(value) => {
+          setChosenOption(value);
+        }}
         />
+
         </View>
 
         <View style={styles.box2}>

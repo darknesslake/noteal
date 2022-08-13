@@ -18,7 +18,7 @@ import FiftyTwo from './src/components/Card/FiftyTwo'
 const Stack = createStackNavigator()
 
 
-
+//
 export default class App extends Component {
   render() {
     return (

@@ -20,6 +20,44 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  containerFlatList: {
+    flex: 1,
+    width: '100%',
+    // backgroundColor: '#fff',
+    borderWidth: 1,
+    // alignItems: 'center',
+    justifyContent: 'center',
+  },
+  containerFlatList2: {
+    // flex: 2,
+    // paddingTop: 4,
+    // padding: 40,
+    height: '30%',
+    width: '100%',
+    // backgroundColor: '#fff',
+    borderWidth: 1,
+    // alignItems: 'center',
+    justifyContent: 'center',
+  },
+  containerFlatListHeader: {
+    flex: 1,
+    // paddingTop: 40,
+    paddingHorizontal: 4,
+    // width: '10%',
+    // backgroundColor: '#fff',
+    // borderWidth: 1,
+    // alignItems: 'center',
+    // justifyContent: 'center',
+  },
+  itemsFlatList: {
+    // marginTop: 14,
+    flex: 1,
+    padding: 10,
+    backgroundColor: 'pink',
+    fontSize: 18,
+    marginHorizontal: 8,
+    marginTop: 10,
+  },
   containertwo: {
     flex: 1,
     // backgroundColor: '#fff',
@@ -35,6 +73,9 @@ const styles = StyleSheet.create({
     // flexDirection: 'column',
     // backgroundColor:'transparent',
     // justifyContent: 'flex-start',
+  },
+  textHeaderList: {
+    color: '#141823'
   },
   image: {
     // flex: 1,
@@ -65,7 +106,7 @@ const styles = StyleSheet.create({
     left: -150,
   },
   backgroundtone: {
-    backgroundColor: 'grey',
+    backgroundColor: 'white',
     width: '100%',
     height: '100%',
     flex: 1

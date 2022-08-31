@@ -14,7 +14,7 @@ export default class ProfileScreen extends Component {
       <View style={styles.container}>
 
 
-          <Text>You are on the about page</Text>
+          <Text>You are on the Profile page</Text>
 
 
         </View>
